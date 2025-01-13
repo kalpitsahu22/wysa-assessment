@@ -1,13 +1,210 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #f9f9f9;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h3 {
+  margin: 0;
+}
+.dashboard {
+  display: flex;
+  gap: 32px;
+}
+
+.sidebar {
+  width: 300px;
+  background-color: #d7e1eb;
+  border-right: 1px solid #ddd;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.users-list {
+  margin: 16px;
+}
+
+.users-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-input {
+  width: -webkit-fill-available;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 16px;
+}
+
+.user-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-item {
+  padding: 16px;
+  cursor: pointer;
+  border-bottom: 1px solid #9ebbd7;
+}
+
+.user-item:hover {
+  background-color: #7da0be;
+}
+
+.main-pane {
+  flex: 1;
+  padding: 20px;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+  gap: 16px;
+}
+
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border: 1px solid #dadada;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+.tab.active {
+  background-color: #d7e1eb;
+  border-bottom: 4px solid #9ebbd7;
+}
+
+.tab-content {
+  background-color: #d7e1eb;
+  border: 2px solid #9ebbd7;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.details-section {
+  margin-bottom: 20px;
+  padding: 8px;
+  border: 2px solid #9ebbd7;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+.details-conteiner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit-btn {
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #e4e4e4;
+  color: black;
+  border: 1px solid rgb(149, 149, 149);
+  border-radius: 5px;
+  width: auto;
+  height: fit-content;
+}
+
+.add-todo {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.add-todo input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+button {
+  font-size: 14px;
+}
+
+.todo-actions button {
+  padding: 5px;
+  cursor: pointer;
+  padding: 8px 12px;
+}
+
+.todo-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+h2 {
+  margin: 0;
+}
+
+/* Custom scrollbar styles */
+.sidebar::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #888; /* Scrollbar thumb color */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Darker color when hovering */
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Scrollbar track color */
+  border-radius: 10px;
+}
+
+/* Add these styles to your existing CSS file */
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.edit-input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.edit-actions button:not(.edit-btn) {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.edit-actions button:not(.edit-btn):hover {
+  background-color: #f5f5f5;
 }
