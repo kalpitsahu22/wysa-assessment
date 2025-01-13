@@ -88,7 +88,7 @@ h3 {
 
 .details-section {
   margin-bottom: 20px;
-  padding: 8px;
+  padding: 16px;
   border: 2px solid #9ebbd7;
   border-radius: 8px;
   background-color: #ffffff;
@@ -114,7 +114,7 @@ h3 {
 .add-todo {
   display: flex;
   gap: 10px;
-  margin-bottom: 20px;
+  align-items: center;
 }
 
 .add-todo input {
@@ -132,7 +132,6 @@ h3 {
 .todo-item {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
   border-bottom: 1px solid #ddd;
 }
 
@@ -207,4 +206,32 @@ h2 {
 
 .edit-actions button:not(.edit-btn):hover {
   background-color: #f5f5f5;
+}
+
+/* Add these styles to your existing CSS file */
+
+/* Custom toast styles */
+.Toastify__toast {
+  border-radius: 4px;
+  padding: 12px 20px;
+}
+
+.Toastify__toast--success {
+  background-color: #4caf50;
+  color: white;
+}
+
+.Toastify__toast--error {
+  background-color: #f44336;
+  color: white;
+}
+
+.Toastify__toast-body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 14px;
+}
+
+.Toastify__progress-bar {
+  height: 3px;
 }

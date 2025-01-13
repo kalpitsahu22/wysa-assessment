@@ -10,6 +10,7 @@ import {
   deleteTodo,
   updateUserDetails,
 } from "../services/api";
+import { ToastContainer, toast } from "react-toastify";
 
 const Dashboard = () => {
   const [users, setUsers] = useState([]);
@@ -70,8 +71,10 @@ const Dashboard = () => {
           ...prev,
           [selectedUser.id]: [...(prev[selectedUser.id] || []), newTodo],
         }));
+        toast.success("Todo added successfully!");
       } catch (error) {
         console.error("Error adding todo:", error);
+        toast.error("Failed to add todo. Please try again.");
       }
     }
   };
@@ -86,8 +89,10 @@ const Dashboard = () => {
             todo.id === todoId ? { ...todo, ...updatedTodo } : todo
           ),
         }));
+        toast.success("Todo updated successfully!");
       } catch (error) {
         console.error("Error updating todo:", error);
+        toast.error("Failed to update todo. Please try again.");
       }
     }
   };
@@ -102,8 +107,10 @@ const Dashboard = () => {
             (todo) => todo.id !== todoId
           ),
         }));
+        toast.success("Todo deleted successfully!");
       } catch (error) {
         console.error("Error deleting todo:", error);
+        toast.error("Failed to delete todo. Please try again.");
       }
     }
   };
@@ -115,8 +122,6 @@ const Dashboard = () => {
           selectedUser.id,
           updatedData
         );
-
-        // Update the users list and selected user with new data
         setUsers(
           users.map((user) =>
             user.id === selectedUser.id ? { ...user, ...updatedUser } : user
@@ -128,11 +133,14 @@ const Dashboard = () => {
           )
         );
         setSelectedUser({ ...selectedUser, ...updatedUser });
+        toast.success("User details updated successfully!");
       } catch (error) {
         console.error("Error updating user:", error);
+        toast.error("Failed to update user details. Please try again.");
       }
     }
   };
+
   const handleUserSelection = (user) => {
     setSelectedUser(user);
     // Keep the same tab when switching users
@@ -142,6 +150,18 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <div className="sidebar">
         <div className="users-container">
           <input

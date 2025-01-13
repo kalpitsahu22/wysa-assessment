@@ -52,7 +52,9 @@ const Todos = ({ todos, onAddTodo, onUpdateTodo, onDeleteTodo }) => {
                 >
                   Save
                 </button>
-                <button onClick={() => setEditTodo(null)}>Cancel</button>
+                <button onClick={() => setEditTodo(null)} className="edit-btn">
+                  Cancel
+                </button>
               </div>
             ) : (
               <>
